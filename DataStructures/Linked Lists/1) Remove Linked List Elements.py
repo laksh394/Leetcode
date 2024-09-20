@@ -1,3 +1,5 @@
+"Q1. Remove Linked List Elements
+
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -16,11 +18,8 @@ class Solution:
                 current_node = current_node.next
                 
         return dummy_head.next
-"""
-Q1. Remove Linked List Elements
-Before writing any code, it's good to make a list of edge cases that we need to consider. This is so that we can be certain that we 
-are not overlooking anything while coming up with our algorithm, and that we're testing all special cases when we're ready to test. These are the edge cases that I came up with.
 
+"""
 The linked list is empty, i.e. the head node is None.
 Multiple nodes with the target value in a row.
 The head node has the target value.
@@ -31,7 +30,7 @@ The last node has the target value.
 In order to save the need to treat the "head" as special, the algorithm uses a "dummy" head. This simplifies the code greatly, particularly 
 in the case of needing to remove the head AND some of the nodes immediately after it.
 Then, we keep track of the current node we're up to, and look ahead to its next node, as long as it exists. If current_node.next does need 
-removing, then we simply replace it with current_node.next.next. We know this is always "safe", because current_node.next is definitely not 
+removing, then we simply replace it with current_node.next.next. We know this is always "safe" because current_node.next is definitely not 
 None (the loop condition ensures that), so we can safely access its next. Otherwise, we know that current_node.next should be kept, and so 
 we move current_node on to be current_node.next.
 
