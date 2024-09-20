@@ -1,4 +1,4 @@
-"Q1. Remove Linked List Elements
+"""Q1. Remove Linked List Elements"""
 
 # Definition for singly-linked list.
 # class ListNode:
