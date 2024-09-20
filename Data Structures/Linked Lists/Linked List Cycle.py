@@ -30,3 +30,8 @@ class Solution:
     
         return False
 
+"""Note: The main idea to solve the question of detecting a cycle in a singly-linked list is to use the concept 
+of two pointers: a "slow" pointer that moves one step at a time and a "fast" pointer that moves two steps at a time. By having 
+these two pointers traverse the list simultaneously if there is a cycle, the fast pointer will eventually catch up to the slow pointer. 
+If there is no cycle, the fast pointer will reach the end of the list."""
+
