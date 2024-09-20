@@ -16,3 +16,5 @@ class Solution:
                 head = head.next
         
         return res
+
+"""Note: Remove next duplicate node."""
