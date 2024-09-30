@@ -13,10 +13,22 @@ Output: [1,3,4]"""
 #         self.right = right
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
-        d=defaultdict(int)
-        def foo(x,depth):
-            if x.left: foo(x.left,depth+1)
-            d[depth]=x.val
-            if x.right: foo(x.right,depth+1)
-        if root: foo(root,0)
-        return [d[i] for i in sorted(d.keys())]
+        result = []
+
+        # Helper function to perform DFS and capture the rightmost element at each depth.
+        def dfs(node, depth):
+            if not node:
+                return
+            
+            # If we are visiting this depth for the first time, add the node's value.
+            if depth == len(result):
+                result.append(node.val)
+            
+            # Visit the right subtree first, then the left subtree.
+            dfs(node.right, depth + 1)
+            dfs(node.left, depth + 1)
+        
+        # Start DFS from the root.
+        dfs(root, 0)
+        
+        return result
